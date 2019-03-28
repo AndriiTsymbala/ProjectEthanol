@@ -1,3 +1,5 @@
+@maincolor: #ffcc33;
+
 body{
     margin: 0;
     font-family: 'Lato', sans-serif;
@@ -6,7 +8,7 @@ h1 {
     font-family: "Lato - Black";
     font-size: 40px;
     text-transform: uppercase;
-    color: #ffcc33;
+    color: @maincolor;
 }
 h4{
     color:  gray;
@@ -32,10 +34,14 @@ h4{
 .menu ul{
     display: flex;
     justify-content: space-around;
+    align-items: baseline;
     list-style: none;
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
+    :hover{
+        border-bottom: 4px solid @maincolor;
+}
 }
 .menu a{
     color: black;
@@ -47,7 +53,7 @@ h4{
     align-content: space-between;
     width: 100%;
     height: 560px;
-    background-image: url(img/main.jpg);
+    background-image: url(../img/main.jpg);
     align-items: center;
 }
 .main-screen-t{
@@ -62,6 +68,9 @@ h4{
     height: 50%;
     align-items: flex-start;
     margin-top: 10px;
+    :hover{
+        border-bottom: 4px solid @maincolor;
+    }
 }
 .main-screen-b a{
     color: white;
@@ -73,32 +82,56 @@ h4{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffcc33;
+    text-align: center;
+    background-color: @maincolor;
 }
 .blokkLogo {
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 120px;
     font-size: 20px;
-}
-.blokkLogoE {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 0% 50% 50% 50%;
-    width: 100px;
-    height: 100px;
-   
+    margin-top: 20px;
 }
 .blokkText {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
+.blokkLogoMain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.line {
+    content: '';
+    width: 350px;
+    height: 1px;
+    background-color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.blokkLogoE {
+    text-align: center;
+    line-height: 100px;
+    background-color: white;
+    border-radius: 0% 50% 50% 50%;
+    width: 100px;
+    height: 100px;
+}
+.blokkLogoO {
+    text-align: center;
+    line-height: 50px;
+    background-color: @maincolor;
+    border-radius: 0% 50% 50% 50%;
+    width: 50px;
+    height: 50px;
+}
+
 .logoEthanol {
     display: flex;
     align-items: center;
-    background-color: #ffcc33;
+    background-color: @maincolor;
     border-radius: 0% 50% 50% 50%;
     width: 100px;
     height: 100px;
