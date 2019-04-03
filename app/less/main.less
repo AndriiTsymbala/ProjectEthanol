@@ -1,6 +1,10 @@
 @maincolor: #ffcc33;
+@whitecolor: white;
+@graycolor: gray;
+@blackcolor: black;
+@specialcolor: rgba(0,0,0,0.4);
 
-body{
+body {
     margin: 0;
     font-family: 'Lato', sans-serif;
 }
@@ -10,28 +14,29 @@ h1 {
     text-transform: uppercase;
     color: @maincolor;
 }
-h4{
-    color:  gray;
+h4 {
+    color:  @graycolor;
 }
-.main{
+.main {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 600px;
    
 }
-.header{
+.header {
     display: flex;
     height: 100px;
     width: 100%;
     justify-content: space-around;
     align-items: center;
- 
+    position: fixed;
+    background-color: @whitecolor;
 }
-.menu{
+.menu {
     width: 60%;
 }
-.menu ul{
+.menu ul {
     display: flex;
     justify-content: space-around;
     align-items: baseline;
@@ -39,44 +44,76 @@ h4{
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
-    :hover{
+    :hover {
         border-bottom: 4px solid @maincolor;
 }
 }
-.menu a{
-    color: black;
+.menu a {
+    color: @blackcolor;
     text-decoration: none;
 }
-.main-screen{
+.main-screen {
     display: flex;
     flex-direction: column;
     align-content: space-between;
+    margin-top: 100px;
     width: 100%;
     height: 560px;
     background-image: url(../img/main.jpg);
     align-items: center;
 }
-.main-screen-t{
+.main-screen-t {
     display: flex;
     flex-direction: column;
     height: 50%;
     align-items: center;
     margin-top: 120px;
 }
-.main-screen-b{
+.main-screen-b {
     display: flex;
     height: 50%;
     align-items: flex-start;
     margin-top: 10px;
+}
+.main-screen-b a {
+    color: @whitecolor;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
     :hover{
         border-bottom: 4px solid @maincolor;
     }
 }
-.main-screen-b a{
-    color: white;
-    text-decoration: none;
-    font-family: 'Lato', sans-serif;
-    font-size: 22px;
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: @blackcolor;
+    background-color: @specialcolor;
+}
+.modal-content {
+    background-color: @whitecolor;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid @graycolor;
+    width: 80%;
+}
+.close {
+    color: @graycolor;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: @blackcolor;
+  text-decoration: none;
+  cursor: pointer;
 }
 .blokk {
     display: flex;
@@ -84,7 +121,7 @@ h4{
     align-items: center;
     text-align: center;
     background-color: @maincolor;
-    color: white;
+    color: @whitecolor;
 }
 .blokkLogo {
     display: flex;
@@ -109,13 +146,13 @@ h4{
     content: '';
     width: 350px;
     height: 1px;
-    background-color: black;
+    background-color: @blackcolor;
     margin-left: 10px;
     margin-right: 10px;
 }
 .blokkLogoE {
     text-align: center;
-    background-color: white;
+    background-color: @whitecolor;
     border-radius: 0% 50% 50% 50%;
     width: 40px;
     height: 40px;
@@ -143,7 +180,7 @@ h4{
 }
 .material-icons {
     font-size: 52px;
-    color: white;
+    color: @whitecolor;
     margin: 14px;;
 }
 .left {
@@ -167,4 +204,26 @@ h4{
     flex-direction: column;
     align-items: center;
     margin-top: 70px;
+}
+.back-to-top {
+    display: none;
+    position: fixed;
+    right: 10px;
+    bottom: 80px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: @maincolor;
+    border: 2px solid @whitecolor;
+    .material-icons {
+        font-size: 37px;
+        color: @whitecolor;
+        margin: 6px;
+    }
+    &:hover {
+       filter: brightness(1.2);
+       outline: none;
+    }
 }

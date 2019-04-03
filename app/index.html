@@ -36,7 +36,15 @@
                 <h4>Wi create beautiful, innovative and effective hendcrafted brends & website</h4>
             </div>
             <div class="main-screen-b">
-                <a href="#">view our work</a>
+                <a href="#" id="myBtn">view our work</a>
+                 <div id="myModal" class="modal">
+                   <div class="modal-content">
+                     <span class="close">&times;</span>
+                     <div class="blokkLogoO">
+                        <span>e</span>
+                     </div>
+                   </div>
+                 </div>
             </div>
         </div>
     </div>
@@ -154,5 +162,29 @@
             <img src="img/teamSide.png" alt="">
         </div>
     </div>
+    <div>
+        <a href="#" class="back-to-top">
+            <i class="material-icons">arrow_upward</i>
+        </a>
+    </div>
+    <script>
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
 </body>
 </html>
